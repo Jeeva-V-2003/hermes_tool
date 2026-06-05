@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HermesVision Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🧠</span>
+      <span class="title">HermesVision <span class="subtitle">Dashboard</span></span>
+    </div>
+    <div class="status" id="status">
+      <span class="dot" id="status-dot"></span>
+      <span id="status-text">CONNECTING…</span>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- Top-left: live screen -->
+    <section class="card screen-card">
+      <div class="card-head">
+        <h2>📺 Live Screen</h2>
+        <span class="muted" id="screen-meta">waiting for capture…</span>
+      </div>
+      <div class="screen-wrap">
+        <img id="screen" alt="live screen capture" />
+        <div class="screen-empty" id="screen-empty">
+          No screenshot yet.<br />
+          <span class="muted">Ask Hermes to call <code>capture_screen</code>.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top-right: tool log -->
+    <section class="card log-card">
+      <div class="card-head">
+        <h2>🔧 Tool Log</h2>
+        <button class="clearbtn" id="clear-log">clear</button>
+      </div>
+      <ul class="log" id="log"></ul>
+    </section>
+
+    <!-- Bottom-left: permissions -->
+    <section class="card perms-card">
+      <div class="card-head">
+        <h2>🔒 Permissions</h2>
+        <span class="muted">toggle to allow/deny</span>
+      </div>
+      <div class="perms" id="perms"></div>
+    </section>
+
+    <!-- Bottom-right: system info -->
+    <section class="card info-card">
+      <div class="card-head">
+        <h2>ℹ️ System Info</h2>
+      </div>
+      <dl class="info" id="info">
+        <div><dt>Screen</dt><dd id="i-screen">—</dd></div>
+        <div><dt>OS</dt><dd id="i-os">—</dd></div>
+        <div><dt>Display</dt><dd id="i-display">—</dd></div>
+        <div><dt>Python</dt><dd id="i-python">—</dd></div>
+        <div><dt>Dashboard uptime</dt><dd id="i-uptime">—</dd></div>
+        <div><dt>Last tool</dt><dd id="i-lasttool">—</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

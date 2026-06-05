@@ -1,0 +1,16 @@
+# HermesVision
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.DS_Store
+
+# Runtime artifacts (created at /tmp and ~/.hermesvision, but ignore any local copies)
+hermesvision_screen.png
+hermesvision_state.json
+hermesvision_events.jsonl
+
+# Playwright browser downloads (installed to ~/.cache/ms-playwright)
+ms-playwright/
